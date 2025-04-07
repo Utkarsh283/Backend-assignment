@@ -49,12 +49,13 @@ Duplicate `.env.example` and rename it to `.env`. Fill in:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster-url.mongodb.net/<dbname>?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<db_name>:<db_password>@cluster0.jrvsjdc.mongodb.net/
 JWT_SECRET=your_jwt_access_secret
 REFRESH_TOKEN_SECRET=your_refresh_token_secret
 JWT_EXPIRE=15m
 REFRESH_TOKEN_EXPIRE=7d
 ```
+Get you MongoDB URL from https://cloud.mongodb.com/  , click on conncet->compass->copy link.
 
 4. **Start the server**:
 ```bash
@@ -62,6 +63,26 @@ npm run dev
 ```
 
 ---
+
+## Script Testing(Make sure server is running before running test scripts)
+
+### Running Tests
+
+To execute the test scripts, use the following commands:
+
+- **Authentication Tests:**
+  ```bash
+  npm run testauth
+  ```
+
+- **User Management Tests:**
+  ```bash
+  npm run testuser
+  ```
+
+### Test Coverage
+
+Ensure that all test cases pass to verify the integrity and security of the application. Review test logs for any failures and address them promptly.
 
 ## 🔄 Authentication Flow
 
@@ -131,25 +152,7 @@ Authorization: Bearer <accessToken>
 
 ---
 
-## Script Testing
 
-### Running Tests
-
-To execute the test scripts, use the following commands:
-
-- **Authentication Tests:**
-  ```bash
-  npm run testauth
-  ```
-
-- **User Management Tests:**
-  ```bash
-  npm run testuser
-  ```
-
-### Test Coverage
-
-Ensure that all test cases pass to verify the integrity and security of the application. Review test logs for any failures and address them promptly.
 
 ## 👮 Admin Features
 
@@ -172,12 +175,3 @@ If your user has `role: "admin"`:
 
 ---
 
-## 📌 Tips
-
-- Use MongoDB Atlas to edit roles (e.g., make a user an `admin`)
-- Use Postman Interceptor or manually manage cookies for refresh testing
-- Make sure `MONGO_URI` and JWT secrets are correctly set
-
----
-
-Happy hacking! 🎯
