@@ -17,7 +17,7 @@ A secure backend API built with **Node.js**, **Express.js**, and **MongoDB Atlas
 ## 📁 Project Structure
 
 ```
-express-mongo-jwt-auth/
+
 │
 ├── controllers/          # Logic for auth and user routes
 ├── middleware/           # Auth middleware for JWT & role checks
