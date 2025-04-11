@@ -35,7 +35,7 @@ A secure backend API built with **Node.js**, **Express.js**, and **MongoDB Atlas
 
 1. **Clone the repository**:
 ```bash
-git clone <your-repo-url>
+gh repo clone Utkarsh283/Backend-assignment
 cd express-mongo-jwt-auth
 ```
 
